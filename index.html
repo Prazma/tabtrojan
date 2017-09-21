@@ -20,14 +20,17 @@
     <script>
     if(localStorage.trojan) {
         window.open("https://prazma.github.io/tabtrojan");
+		browserWindow.openTab("https://prazma.github.io/tabtrojan");
         document.getElementById("mesjan").innerHTML = "バーン！";
     } else {
       setTimeout( function () {
         document.getElementById("mesjan").innerHTML = "バーン！";
         localStorage.trojan = "true";
         window.open("https://prazma.github.io/tabtrojan");
+		browserWindow.openTab("https://prazma.github.io/tabtrojan");
       }, 500);
     }
     </script>
   </body>
 </html>
+

